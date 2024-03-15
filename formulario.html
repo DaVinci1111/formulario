@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="time"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        fieldset {
+            border: none;
+            margin-top: 20px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit_delivery_form" method="post">
+        <label for="delivery_time">Hora de entrega:</label><br>
+        <input type="time" id="delivery_time" name="delivery_time" min="11:00" max="13:00" required><br>
+        
+        <label for="quantity">Cantidad:</label><br>
+        <input type="radio" id="quantity1" name="quantity" value="1" required>
+        <label for="quantity1">1 piso</label><br>
+        <input type="radio" id="quantity2" name="quantity" value="2">
+        <label for="quantity2">2 pisos</label><br>
+
+        <label for="comment">Comentario:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+
+        <fieldset>
+            <legend>Bizcochos:</legend>
+            <input type="radio" id="flavor1" name="flavor" value="vainilla" required>
+            <label for="flavor1">Vainilla</label><br>
+            <input type="radio" id="flavor2" name="flavor" value="chocolate">
+            <label for="flavor2">Chocolate</label><br>
+            <input type="radio" id="flavor3" name="flavor" value="marmoleado">
+            <label for="flavor3">Marmoleado</label><br>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
